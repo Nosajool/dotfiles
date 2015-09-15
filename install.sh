@@ -15,7 +15,7 @@
 
 dir=~/dotfiles         # dotfiles directory
 olddir=~/dotfiles_old  # old dotfiles backup directory
-files=".vimrc .zshrc .oh-my-zsh"         # list of files/folders to symlink in homedir
+files=".vimrc .vim .zshrc .oh-my-zsh"         # list of files/folders to symlink in homedir
 
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
@@ -31,7 +31,7 @@ install_zsh () {
 if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then # Test if zshell is installed
   if [[ ! -d ~/.oh-my-zsh/ ]]; then       # Check if oh-my-zsh directory exists
     git clone http://github.com/robbyrussell/oh-my-zsh.git
-    "Renaming oh-my-zsh directory to .oh-my-zsh"
+    echo "Renaming oh-my-zsh directory to .oh-my-zsh"
     mv -v oh-my-zsh .oh-my-zsh
   else
     echo "oh-my-zsh directory already exists"
@@ -49,7 +49,17 @@ else
 fi
 }
 
+install_vundle () {
+  if [[ ! -d ~/dotfiles/.vim/bundle/Vundle.vim ]]; then
+    echo "Cloning Vundle"
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles/.vim/bundle/Vundle.vim
+  else
+    echo "Already have Vundle."
+  fi
+}
+
 install_zsh
+install_vundle
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in $files; do
