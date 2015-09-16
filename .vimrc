@@ -13,6 +13,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
 Plugin 'jeetsukumaran/vim-indentwise'
 Plugin 'mattn/emmet-vim'
+Plugin 'terryma/vim-multiple-cursors'
 
 call vundle#end() " end vundle
 filetype plugin indent on
@@ -24,6 +25,7 @@ set tabstop=2      " 2 space characters when tab key is pressed
 set shiftwidth=2   " 2 space characters for indentation >> <<
 set softtabstop=2  " backspace treats 2 spaces as a tab and goes back 2 spaces
 set autoindent     " use indent from previous line
+set backspace=2    " fix backspacing on automatically indented text
 
 " NERDTree use CTRL-N to toggle
 map <C-n> :NERDTreeToggle<CR>
