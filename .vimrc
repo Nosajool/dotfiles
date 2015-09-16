@@ -12,6 +12,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
 Plugin 'jeetsukumaran/vim-indentwise'
+Plugin 'mattn/emmet-vim'
 
 call vundle#end() " end vundle
 filetype plugin indent on
@@ -26,3 +27,10 @@ set autoindent     " use indent from previous line
 
 " NERDTree use CTRL-N to toggle
 map <C-n> :NERDTreeToggle<CR>
+
+" Move up and down with k and j using display lines not real lines
+" Move up and down with gk and gj using real lines
+nnoremap k gk
+nnoremap j gj
+nnoremap gk k
+nnoremap gj j
