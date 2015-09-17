@@ -32,6 +32,10 @@ set softtabstop=2  " backspace treats 2 spaces as a tab and goes back 2 spaces
 set autoindent     " use indent from previous line
 set backspace=2    " fix backspacing on automatically indented text
 set ruler          " show line and column number
+set incsearch      " show search results as you type
+set ignorecase     " ignore search case
+set splitright     " split right by default
+
 
 " Move up and down with k and j using display lines not real lines
 " Move up and down with gk and gj using real lines
@@ -56,6 +60,9 @@ nnoremap <Leader>j <C-w>j
 nnoremap <Leader>J <C-w>J
 nnoremap <Leader>k <C-w>k
 nnoremap <Leader>K <C-w>K
+
+" Relative number toggling
+nnoremap <Leader>n :set relativenumber!<CR>
 
 " Fugitive
 nnoremap <Leader>gs :Gstatus<CR>
