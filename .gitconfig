@@ -1,3 +1,11 @@
 [user]
 	name = Jason Loo
 	email = loo.jason95@gmail.com
+
+[alias]
+  ci = commit
+  lg = log --graph
+  st = status
+  br = branch
+  co = checkout
+  sh = show
