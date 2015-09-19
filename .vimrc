@@ -1,10 +1,10 @@
 set nocompatible   " Vim
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim " set the runtime path to include Vundle
-call vundle#begin() " initialize vundle
-" Install Vundle plugins with
-  " :source %
-  " :PluginInstall
+call vundle#begin()               " initialize vundle
+" Install Vundle plugins
+" :source %
+" :PluginInstall
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
@@ -18,7 +18,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 
-call vundle#end() " end vundle
+call vundle#end()  " end vundle
 syntax on          " enable syntax highlighting
 filetype on        " enable filetype detection
 filetype indent on " enable filetype-specific indenting
@@ -34,20 +34,35 @@ set backspace=2    " fix backspacing on automatically indented text
 set ruler          " show line and column number
 set incsearch      " show search results as you type
 set ignorecase     " ignore search case
+set splitbelow     " splits below by default
 set splitright     " split right by default
+set autoread       " when file change by :! cmd, reload file. Alternatively, :e
+set autowrite      " save on focus loss
 
+set title          " show file title
+set showcmd        " show typed letters in bottom right
+set showmode       " show mode in bottom left corner
 
+" allow use of mouse
+set ttyfast
+set mouse=a
+set ttymouse=xterm2
+
+" Normal + Visual mode
 " Move up and down with k and j using display lines not real lines
 " Move up and down with gk and gj using real lines
-nnoremap k gk
-nnoremap j gj
-nnoremap gk k
-nnoremap gj j
+" Move to begin/end of line with H/L
+noremap k gk
+noremap j gj
+noremap gk k
+noremap gj j
+noremap H ^
+noremap L g_
 
 " Set leader to space
 let mapleader = "\<Space>"
 
-" Scroll up/down
+" Scroll up/down by half a page
 nnoremap <C-j> <C-d>
 nnoremap <C-k> <C-u>
 
@@ -66,7 +81,10 @@ nnoremap <Leader>n :set relativenumber!<CR>
 
 " Fugitive
 nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gl :Git log<Cr>
+nnoremap <Leader>gl :Git log<CR>
+
+"Open Vimrc
+nnoremap <Leader>rc :vsp $MYVIMRC<CR>
 
 " NERDTree use CTRL-N to toggle
 map <C-n> :NERDTreeToggle<CR>
