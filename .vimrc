@@ -19,12 +19,20 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'vimwiki/vimwiki'
 Plugin 'mattn/calendar-vim'
+Plugin 'tomtom/tlib_vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 
 call vundle#end()  " end vundle
 syntax on          " enable syntax highlighting
 filetype on        " enable filetype detection
 filetype indent on " enable filetype-specific indenting
 filetype plugin on " enable filetype-specific plugins
+
+let g:solarized_termcolors = 256
+set background=dark
+colorscheme solarized
 
 set number         " turn on line numbers
 set expandtab      " insert space characters wherever the tab key is pressed
@@ -91,7 +99,7 @@ nnoremap <Leader>n :set relativenumber!<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gl :Git log<CR>
 
-"Open Vimrc
+" Open Vimrc
 nnoremap <Leader>rc :vsp $MYVIMRC<CR>
 
 " NERDTree use CTRL-N to toggle

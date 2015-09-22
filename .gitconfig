@@ -9,3 +9,9 @@
   br = branch
   co = checkout
   sh = show
+
+[push]
+	default = upstream
+
+[core]
+	editor = /usr/bin/vim
