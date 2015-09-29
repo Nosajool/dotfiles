@@ -92,6 +92,10 @@ nnoremap <Left> :vertical resize +5<CR>
 nnoremap <Up> :resize +5<CR>
 nnoremap <Down> :resize -5<CR>
 
+" Indenting
+nnoremap <Leader>[ <<
+nnoremap <Leader>] >>
+
 " Relative number toggling
 nnoremap <Leader>n :set relativenumber!<CR>
 
