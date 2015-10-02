@@ -48,6 +48,8 @@ set splitbelow     " splits below by default
 set splitright     " split right by default
 set autoread       " when file change by :! cmd, reload file. Alternatively, :e
 set autowrite      " save on focus loss
+set textwidth=120   " maximum width of text that is being inserted
+set colorcolumn=+1 " mark the 120th column
 
 set title          " show file title
 set showcmd        " show typed letters in bottom right
