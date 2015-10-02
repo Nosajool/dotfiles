@@ -108,6 +108,9 @@ nnoremap <Leader>gl :Git log<CR>
 " Open Vimrc
 nnoremap <Leader>rc :vsp $MYVIMRC<CR>
 
+" Open tmux config
+nnoremap <Leader>tc :vsp ~/.tmux.conf<CR>
+
 " NERDTree use CTRL-N to toggle
 map <C-n> :NERDTreeToggle<CR>
 
