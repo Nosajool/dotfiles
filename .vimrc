@@ -23,6 +23,8 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-surround'
+Plugin 'bling/vim-airline'
 
 call vundle#end()  " end vundle
 syntax on          " enable syntax highlighting
@@ -33,6 +35,7 @@ filetype plugin on " enable filetype-specific plugins
 let g:solarized_termcolors = 256
 set background=dark
 colorscheme solarized
+set encoding=utf-8
 
 set number         " turn on line numbers
 set expandtab      " insert space characters wherever the tab key is pressed
@@ -42,23 +45,26 @@ set softtabstop=2  " backspace treats 2 spaces as a tab and goes back 2 spaces
 set autoindent     " use indent from previous line
 set backspace=2    " fix backspacing on automatically indented text
 set ruler          " show line and column number
+set ignorecase     " ignore search case (lowercase)
+set smartcase      " override 'ignorecase' if search pattern contains upper case characters
 set incsearch      " show search results as you type
-set ignorecase     " ignore search case
+set showmatch      " when closing bracket is inserted, briefly jump to the matching one
 set splitbelow     " splits below by default
 set splitright     " split right by default
 set autoread       " when file change by :! cmd, reload file. Alternatively, :e
 set autowrite      " save on focus loss
 set textwidth=120   " maximum width of text that is being inserted
 set colorcolumn=+1 " mark the 120th column
+set cursorline     " Highlight the screen line of the cursor
 
 set title          " show file title
 set showcmd        " show typed letters in bottom right
 set showmode       " show mode in bottom left corner
 
 " allow use of mouse
-set ttyfast
-set mouse=a
-set ttymouse=xterm2
+set ttyfast        " Indicate fast termianl connection
+set mouse=a        " Enable use of mouse in normal, visual, insert, command mode
+set ttymouse=xterm2 " Name of the terminal type for which mouse codes are to be recognized
 
 " Normal + Visual mode
 " Move up and down with k and j using display lines not real lines
@@ -98,6 +104,13 @@ nnoremap <Down> :resize -5<CR>
 nnoremap <Leader>[ <<
 nnoremap <Leader>] >>
 
+" Jump to matching bracket
+nnoremap <tab> %
+vnoremap <tab> %
+
+" Make ; the same as : in normal mode
+nnoremap ; :
+
 " Relative number toggling
 nnoremap <Leader>n :set relativenumber!<CR>
 
@@ -108,11 +121,20 @@ nnoremap <Leader>gl :Git log<CR>
 " Open Vimrc
 nnoremap <Leader>rc :vsp $MYVIMRC<CR>
 
+" Open my Vim Commmands Help
+nnoremap <Leader>vc :vsp ~/vimwiki/vim-commands/index.wiki<CR>
+
 " Open tmux config
 nnoremap <Leader>tc :vsp ~/.tmux.conf<CR>
 
 " NERDTree use CTRL-N to toggle
 map <C-n> :NERDTreeToggle<CR>
+
+" CtrlP
+nnoremap <Leader>b :CtrlPBuffer<CR>
+
+" close current buffer
+nmap <Leader>q :bp <BAR> bd #<CR>
 
 " vim-multiple-cursors use CTRL-D like sublime text
 let g:multi_cursor_next_key='<C-d>'
@@ -139,5 +161,31 @@ endfunction
 " Make quick note
 :autocmd FileType vimwiki map <Leader>d :VimwikiMakeDiaryNote<CR>
 
-" Generate Links
-:autocmd FileType vimwiki map <Leader>wg :VimwikiGenerateLinks<CR>
+" Generate links
+:autocmd FileType vimwiki map <Leader>gl :VimwikiGenerateLinks<CR>
+
+
+"### Airline
+" Always give the last window the status line
+set laststatus=2
+" Enable the automatic population of g:airline_symbols dictionary
+let g:airline_powerline_fonts = 1
+" Enable the enhanced tabline
+let g:airline#extensions#tabline#enabled = 1
+" Display buffers with a single tab
+let g:airline#extensions#tabline#show_buffers = 1
+" Only show the filename in buffer tab
+let g:airline#extensions#tabline#fnamemod = ':t'
+" Theme
+let g:airline_theme='lucius'
+" Display buffer number in tabline and allow switching to with leader#
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
