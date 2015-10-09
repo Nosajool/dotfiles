@@ -25,6 +25,7 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-repeat'
 
 call vundle#end()  " end vundle
 syntax on          " enable syntax highlighting
@@ -56,6 +57,7 @@ set autowrite      " save on focus loss
 set textwidth=120   " maximum width of text that is being inserted
 set colorcolumn=+1 " mark the 120th column
 set cursorline     " Highlight the screen line of the cursor
+set relativenumber " Start with relative number turned on
 
 set title          " show file title
 set showcmd        " show typed letters in bottom right
