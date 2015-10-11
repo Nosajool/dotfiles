@@ -111,6 +111,9 @@ nnoremap <Leader>] >>
 nnoremap <tab> %
 vnoremap <tab> %
 
+" Jump to mark
+nnoremap M `
+
 " Make ; the same as : in normal mode
 nnoremap ; :
 
@@ -120,6 +123,9 @@ nnoremap <Leader>n :set relativenumber!<CR>
 " Fugitive
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gl :Git log<CR>
+
+" Expand emmet using ,, in insert mode
+let g:user_emmet_leader_key=','
 
 " Open Vimrc
 nnoremap <Leader>rc :vsp $MYVIMRC<CR>
