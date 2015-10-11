@@ -15,6 +15,7 @@
 
 dir=~/dotfiles         # dotfiles directory
 olddir=~/dotfiles_old  # old dotfiles backup directory
+vimbackupdir=~/dotfiles/.vim/backup
 files=".vimrc .vim .zshrc .oh-my-zsh .tmux.conf"         # list of files/folders to symlink in homedir
 
 # create dotfiles_old in homedir
@@ -26,6 +27,9 @@ echo "...done"
 echo "Changing into $dir directory"
 cd $dir
 echo "...done"
+
+# create vim folder for swp files
+mkdir -p $vimbackupdir
 
 install_zsh () {
 if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then # Test if zshell is installed
@@ -64,7 +68,7 @@ install_vundle
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in $files; do
   # http://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html
-  if [ ! -f ~/$file ]; then # if file does not exist and files is regular 
+  if [ ! -f ~/$file ]; then # if file does not exist and files is regular
     echo "No existing $file found"
   else
     echo "Moving any existing $file from to $olddir"
