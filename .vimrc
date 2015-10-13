@@ -111,6 +111,9 @@ nnoremap <Leader>] >>
 nnoremap <tab> %
 vnoremap <tab> %
 
+" Exit insert mode using jj
+imap jj <ESC>
+
 " Jump to mark
 nnoremap M `
 
@@ -125,7 +128,7 @@ nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gl :Git log<CR>
 
 " Expand emmet using ,, in insert mode
-let g:user_emmet_leader_key=','
+" let g:user_emmet_leader_key=',' Determine a different key. default , is important
 
 " Open Vimrc
 nnoremap <Leader>rc :vsp $MYVIMRC<CR>
@@ -138,8 +141,6 @@ nnoremap <Leader>tc :vsp ~/.tmux.conf<CR>
 
 " NERDTree use CTRL-N to toggle
 map <C-n> :NERDTreeToggle<CR>
-" Show .files in nerdtree
-let NERDTreeShowHidden=1
 
 " CtrlP
 nnoremap <Leader>b :CtrlPBuffer<CR>
