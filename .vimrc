@@ -58,8 +58,9 @@ set textwidth=120   " maximum width of text that is being inserted
 set colorcolumn=+1 " mark the 120th column
 set cursorline     " Highlight the screen line of the cursor
 set relativenumber " Start with relative number turned on
-set backupdir=~/dotfiles/.vim/backup/,.
-set directory=~/dotfiles/.vim/backup/,.
+set cursorline cursorcolumn " Verticle column highlighting
+" set backupdir=~/dotfiles/.vim/backup/,.
+" set directory=~/dotfiles/.vim/backup/,.
 set title          " show file title
 set showcmd        " show typed letters in bottom right
 set showmode       " show mode in bottom left corner
