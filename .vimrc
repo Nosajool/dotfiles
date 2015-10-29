@@ -64,6 +64,9 @@ set cursorline cursorcolumn " Verticle column highlighting
 set title          " show file title
 set showcmd        " show typed letters in bottom right
 set showmode       " show mode in bottom left corner
+set wildmenu       " command-line completion
+set wildmode=full  " complete the next full match
+set scrolloff=3    " Minimal number of screen lines to keep above and below the cursor
 
 " allow use of mouse
 set ttyfast        " Indicate fast termianl connection
