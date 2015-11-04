@@ -26,6 +26,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-repeat'
+Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()  " end vundle
 syntax on          " enable syntax highlighting
