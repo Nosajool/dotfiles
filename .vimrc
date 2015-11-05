@@ -147,6 +147,9 @@ nnoremap <Leader>tc :vsp ~/.tmux.conf<CR>
 " NERDTree use CTRL-N to toggle
 map <C-n> :NERDTreeToggle<CR>
 
+" View current buffer in NERDTree
+map <Leader>f :NERDTreeFind<CR>
+
 " CtrlP
 nnoremap <Leader>b :CtrlPBuffer<CR>
 
