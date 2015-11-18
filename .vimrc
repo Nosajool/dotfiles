@@ -60,14 +60,14 @@ set colorcolumn=+1 " mark the 120th column
 set cursorline     " Highlight the screen line of the cursor
 set relativenumber " Start with relative number turned on
 set cursorline cursorcolumn " Verticle column highlighting
-" set backupdir=~/dotfiles/.vim/backup/,.
-" set directory=~/dotfiles/.vim/backup/,.
+set noswapfile     " no swap file"
 set title          " show file title
 set showcmd        " show typed letters in bottom right
 set showmode       " show mode in bottom left corner
 set wildmenu       " command-line completion
 set wildmode=full  " complete the next full match
 set scrolloff=3    " Minimal number of screen lines to keep above and below the cursor
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip "Ignore files when completing file/directory names
 
 " allow use of mouse
 set ttyfast        " Indicate fast termianl connection
