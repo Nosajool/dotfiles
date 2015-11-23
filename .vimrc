@@ -56,6 +56,7 @@ set splitright     " split right by default
 set autoread       " when file change by :! cmd, reload file. Alternatively, :e
 set autowrite      " save on focus loss
 set textwidth=120   " maximum width of text that is being inserted
+au FileType gitcommit set textwidth=72 " Exception is 72 for git
 set colorcolumn=+1 " mark the 120th column
 set cursorline     " Highlight the screen line of the cursor
 set relativenumber " Start with relative number turned on
