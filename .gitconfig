@@ -19,5 +19,8 @@
 [color]
   ui = true
 
+[commit]
+  template = ~/.gitcommittemplate
+
 [core]
   editor = /usr/bin/vim
