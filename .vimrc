@@ -185,6 +185,10 @@ endfunction
 " Generate links
 :autocmd FileType vimwiki map <Leader>gl :VimwikiGenerateLinks<CR>
 
+" Previous/Next Day
+:autocmd FileType vimwiki map <Leader>wn :VimwikiDiaryNextDay<CR>
+:autocmd FileType vimwiki map <Leader>wp :VimwikiDiaryPrevDay<CR>
+
 
 "### Airline
 " Always give the last window the status line
