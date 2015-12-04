@@ -129,6 +129,9 @@ nnoremap ; :
 " Relative number toggling
 nnoremap <Leader>n :set relativenumber!<CR>
 
+" Paste toggling
+nnoremap <Leader>p :set invpaste<CR>
+
 " Fugitive
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gl :Git log<CR>
