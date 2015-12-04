@@ -156,6 +156,7 @@ map <Leader>f :NERDTreeFind<CR>
 
 " CtrlP
 nnoremap <Leader>b :CtrlPBuffer<CR>
+let g:ctrlp_max_files = 0
 
 " close current buffer
 nmap <Leader>q :bp <BAR> bd #<CR>
