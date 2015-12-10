@@ -132,6 +132,9 @@ nnoremap <Leader>n :set relativenumber!<CR>
 " Paste toggling
 nnoremap <Leader>p :set invpaste<CR>
 
+" Visually select all
+nnoremap <Leader>a ggVG
+
 " Fugitive
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gl :Git log<CR>
