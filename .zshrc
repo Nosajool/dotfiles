@@ -82,6 +82,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias wiki="cd ~/vimwiki"
 
 export PATH="$HOME/.bin:$PATH"
 eval "$(rbenv init - --no-rehash zsh)"
