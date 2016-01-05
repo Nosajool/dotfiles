@@ -83,7 +83,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias wiki="cd ~/vimwiki"
+alias ls="ls -FG" # Colour and display /*@=%| for directory, executable, symlink etc..
 
+# echo $HOME => /Users/jasonloo
 export PATH="$HOME/.bin:$PATH"
 eval "$(rbenv init - --no-rehash zsh)"
 export EDITOR='vim'
+export PATH="/Library/TeX/texbin:$PATH"
+
+# Paul's watchLatex function
+function watchLatex {
+  fswatch -0 $1 | xargs -0 -n1 pdflatex
+}
