@@ -75,6 +75,9 @@ set ttyfast        " Indicate fast termianl connection
 set mouse=a        " Enable use of mouse in normal, visual, insert, command mode
 set ttymouse=xterm2 " Name of the terminal type for which mouse codes are to be recognized
 
+" Spell check only for markdown
+autocmd BufRead,BufNewFile *.md set spell
+
 " Normal + Visual mode
 " Move up and down with k and j using display lines not real lines
 " Move up and down with gk and gj using real lines
