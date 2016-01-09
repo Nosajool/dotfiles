@@ -56,7 +56,6 @@ set splitright     " split right by default
 set autoread       " when file change by :! cmd, reload file. Alternatively, :e
 set autowrite      " save on focus loss
 set textwidth=120   " maximum width of text that is being inserted
-au FileType gitcommit set textwidth=72 " Exception is 72 for git
 set colorcolumn=+1 " mark the 120th column
 set cursorline     " Highlight the screen line of the cursor
 set relativenumber " Start with relative number turned on
@@ -74,9 +73,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip "Ignore files when completing file/dire
 set ttyfast        " Indicate fast termianl connection
 set mouse=a        " Enable use of mouse in normal, visual, insert, command mode
 set ttymouse=xterm2 " Name of the terminal type for which mouse codes are to be recognized
-
-" Spell check only for markdown
-autocmd BufRead,BufNewFile *.md set spell
 
 " Normal + Visual mode
 " Move up and down with k and j using display lines not real lines
@@ -170,11 +166,9 @@ nmap <Leader>q :bp <BAR> bd #<CR>
 " vim-multiple-cursors use CTRL-D like sublime text
 let g:multi_cursor_next_key='<C-d>'
 
-" Set Vimwiki file type for *.wiki
-au BufRead,BufNewFile *.wiki set filetype=vimwiki
-
-" Use Calendar within VimWiki
-function! ToggleCalendar()
+" Vimwiki Settings
+autocmd BufRead,BufNewFile *.wiki set filetype=vimwiki " Set vimwiki filetype
+function! ToggleCalendar() " Use Calendar within VimWiki
   execute ":Calendar"
   if exists("g:calendar_open")
     if g:calendar_open == 1
@@ -187,18 +181,17 @@ function! ToggleCalendar()
     let g:calendar_open = 1
   end
 endfunction
-:autocmd FileType vimwiki map <Leader>c :call ToggleCalendar()<CR>
+autocmd FileType vimwiki map <Leader>c :call ToggleCalendar()<CR> " Toggle vimwiki calendar
+autocmd FileType vimwiki map <Leader>gl :VimwikiGenerateLinks<CR> " Generate vimwiki index links
+autocmd FileType vimwiki map <Leader>wn :VimwikiDiaryNextDay<CR> " Next Day
+autocmd FileType vimwiki map <Leader>wp :VimwikiDiaryPrevDay<CR> " Previous Day
 
-" Make quick note
-:autocmd FileType vimwiki map <Leader>d :VimwikiMakeDiaryNote<CR>
+" Markdown Specific
+autocmd FileType mkd set spell " Spell check on
+autocmd FileType mkd set textwidth=0 " max text width disabled
 
-" Generate links
-:autocmd FileType vimwiki map <Leader>gl :VimwikiGenerateLinks<CR>
-
-" Previous/Next Day
-:autocmd FileType vimwiki map <Leader>wn :VimwikiDiaryNextDay<CR>
-:autocmd FileType vimwiki map <Leader>wp :VimwikiDiaryPrevDay<CR>
-
+" Git Commit Specific
+autocmd FileType gitcommit set textwidth=72 " Commit message width
 
 "### Airline
 " Always give the last window the status line
