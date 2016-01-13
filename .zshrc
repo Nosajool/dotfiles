@@ -91,6 +91,7 @@ export PATH="$HOME/.bin:$PATH"
 eval "$(rbenv init - --no-rehash zsh)"
 export EDITOR='vim'
 export PATH="/Library/TeX/texbin:$PATH"
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 # Paul's watchLatex function
 function watchLatex {

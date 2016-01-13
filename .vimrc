@@ -187,8 +187,9 @@ autocmd FileType vimwiki map <Leader>wn :VimwikiDiaryNextDay<CR> " Next Day
 autocmd FileType vimwiki map <Leader>wp :VimwikiDiaryPrevDay<CR> " Previous Day
 
 " Markdown Specific
-autocmd FileType mkd set spell " Spell check on
-autocmd FileType mkd set textwidth=0 " max text width disabled
+au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=markdown
+autocmd FileType markdown set spell " Spell check on
+autocmd FileType markdown set textwidth=0 " max text width disabled
 
 " Git Commit Specific
 autocmd FileType gitcommit set textwidth=72 " Commit message width
