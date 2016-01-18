@@ -85,6 +85,7 @@ source $ZSH/oh-my-zsh.sh
 alias wiki="cd ~/vimwiki"
 alias ls="ls -FG" # Colour and display /*@=%| for directory, executable, symlink etc..
 alias gsf="git show --name-only"
+alias gg="git grep"
 
 # echo $HOME => /Users/jasonloo
 export PATH="$HOME/.bin:$PATH"
