@@ -116,6 +116,12 @@ nnoremap <Leader>] >>
 nnoremap <tab> %
 vnoremap <tab> %
 
+" Copy to OSX clipboard
+vnoremap <Leader>c "*y
+
+" Paste from OSX clipboard
+nnoremap <Leader>v "*p
+
 " Exit insert mode using jj
 imap jj <ESC>
 
@@ -143,9 +149,6 @@ nnoremap <Leader>gl :Git log<CR>
 
 " Open Vimrc
 nnoremap <Leader>rc :vsp $MYVIMRC<CR>
-
-" Open my Vim Commmands Help
-nnoremap <Leader>vc :vsp ~/vimwiki/vim-commands/index.wiki<CR>
 
 " Open tmux config
 nnoremap <Leader>tc :vsp ~/.tmux.conf<CR>
