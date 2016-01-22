@@ -156,6 +156,9 @@ nnoremap <Leader>tc :vsp ~/.tmux.conf<CR>
 " NERDTree use CTRL-N to toggle
 map <C-n> :NERDTreeToggle<CR>
 
+" Ignore certain file extensions in NerdTree
+let NERDTreeIgnore = ['\.class$', '\.o$', '\.d$']
+
 " View current buffer in NERDTree
 map <Leader>f :NERDTreeFind<CR>
 
