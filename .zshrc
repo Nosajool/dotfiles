@@ -86,6 +86,7 @@ alias wiki="cd ~/vimwiki"
 alias ls="ls -FG" # Colour and display /*@=%| for directory, executable, symlink etc..
 alias gsf="git show --name-only"
 alias gg="git grep"
+alias site-packages="cd /usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages"
 
 # echo $HOME => /Users/jasonloo
 export PATH="$HOME/.bin:$PATH"
