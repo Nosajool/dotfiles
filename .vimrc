@@ -67,7 +67,7 @@ set showmode       " show mode in bottom left corner
 set wildmenu       " command-line completion
 set wildmode=full  " complete the next full match
 set scrolloff=3    " Minimal number of screen lines to keep above and below the cursor
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip "Ignore files when completing file/directory names
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,*.o,*.d "Ignore files when completing file/directory names
 
 " allow use of mouse
 set ttyfast        " Indicate fast termianl connection
