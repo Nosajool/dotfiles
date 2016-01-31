@@ -79,15 +79,6 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias wiki="cd ~/vimwiki"
-alias ls="ls -FG" # Colour and display /*@=%| for directory, executable, symlink etc..
-alias gsf="git show --name-only"
-alias gg="git grep"
-alias gdc="git diff --cached"
-alias site-packages="cd /usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages"
 
 # echo $HOME => /Users/jasonloo
 export PATH="$HOME/.bin:$PATH"
@@ -100,3 +91,17 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 function watchLatex {
   fswatch -0 $1 | xargs -0 -n1 pdflatex
 }
+
+# JUnit
+export JUNIT_HOME="$HOME/junit"
+export PATH="$PATH:$JUNIT_HOME"
+export CLASSPATH="$CLASSPATH:$JUNIT_HOME/junit-4.12.jar:$JUNIT_HOME/hamcrest-core-1.3.jar"
+
+# Aliases
+alias wiki="cd ~/vimwiki"
+alias ls="ls -FG" # Colour and display /*@=%| for directory, executable, symlink etc..
+alias gsf="git show --name-only"
+alias gg="git grep"
+alias gdc="git diff --cached"
+alias site-packages="cd /usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages"
+alias junit="java org.junit.runner.JUnitCore"
