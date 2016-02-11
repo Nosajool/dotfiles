@@ -192,6 +192,8 @@ autocmd FileType vimwiki map <Leader>gl :VimwikiGenerateLinks<CR> " Generate vim
 autocmd FileType vimwiki map <Leader>wn :VimwikiDiaryNextDay<CR> " Next Day
 autocmd FileType vimwiki map <Leader>wp :VimwikiDiaryPrevDay<CR> " Previous Day
 
+" --------------------------- Language Specific Stuff ----------------------
+
 " Markdown Specific
 au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=markdown
 autocmd FileType markdown set spell " Spell check on
@@ -200,7 +202,13 @@ autocmd FileType markdown set textwidth=0 " max text width disabled
 " Git Commit Specific
 autocmd FileType gitcommit set textwidth=72 " Commit message width
 
-"### Airline
+" C
+autocmd FileType c set tabstop=4
+autocmd FileType c set softtabstop=4
+autocmd FileType c set shiftwidth=4
+autocmd FileType c map<Leader>hm :%s//\r/g<CR> " Remove windows line endings
+
+" --------------------------- Airline----------------------
 " Always give the last window the status line
 set laststatus=2
 " Enable the automatic population of g:airline_symbols dictionary
