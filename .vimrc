@@ -67,7 +67,7 @@ set showmode       " show mode in bottom left corner
 set wildmenu       " command-line completion
 set wildmode=full  " complete the next full match
 set scrolloff=3    " Minimal number of screen lines to keep above and below the cursor
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,*.o,*.d "Ignore files when completing file/directory names
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,*.o,*.d,*.crf "Ignore files when completing file/directory names
 
 " allow use of mouse
 set ttyfast        " Indicate fast termianl connection
@@ -203,10 +203,17 @@ autocmd FileType markdown set textwidth=0 " max text width disabled
 autocmd FileType gitcommit set textwidth=72 " Commit message width
 
 " C
-autocmd FileType c set tabstop=4
-autocmd FileType c set softtabstop=4
-autocmd FileType c set shiftwidth=4
-autocmd FileType c map<Leader>hm :%s//\r/g<CR> " Remove windows line endings
+" Might not be worth it to set these because it makes file switching significantly slower
+" autocmd FileType c set tabstop=4
+" autocmd FileType c set softtabstop=4
+" autocmd FileType c set shiftwidth=4
+" autocmd FileType c map<Leader>hm :%s//\r/g<CR> " Remove windows line endings
+
+" Java
+autocmd FileType java set tabstop=4
+autocmd FileType java set softtabstop=4
+autocmd FileType java set shiftwidth=4
+autocmd FileType java set noexpandtab
 
 " --------------------------- Airline----------------------
 " Always give the last window the status line
