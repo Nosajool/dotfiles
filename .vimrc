@@ -25,8 +25,10 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-repeat'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'fatih/vim-go'
 
 call vundle#end()  " end vundle
 syntax on          " enable syntax highlighting
