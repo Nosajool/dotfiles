@@ -62,8 +62,34 @@ install_vundle () {
   fi
 }
 
+install_homebrew () {
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+}
+
+install_tmux () {
+  brew install tmux
+}
+
+install_python () {
+  brew install python
+  echo "Also updating pip..."
+  pip install --upgrade pip
+}
+
+install_powerline () {
+  pip install powerline-status
+  git clone git@github.com:powerline/fonts.git
+  cd fonts
+  ./install.sh
+  echo "Open iterm profile and set 14 Pt. Incosolata for Powerline"
+}
+
+install_homebrew
 install_zsh
 install_vundle
+install_tmux
+install_python
+install_powerline
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in $files; do
