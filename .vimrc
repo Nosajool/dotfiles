@@ -217,6 +217,16 @@ autocmd FileType java set softtabstop=4
 autocmd FileType java set shiftwidth=4
 autocmd FileType java set noexpandtab
 
+" Go
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+" let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+" let g:go_highlight_operators = 1
+" let g:go_highlight_build_constraints = 1
+
 " --------------------------- Airline----------------------
 " Always give the last window the status line
 set laststatus=2
