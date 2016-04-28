@@ -1,9 +1,9 @@
 name: gsd
 root: ~/
-startup_window: Diary
+startup_window: Journal
 
 windows:
-  - Diary:
+  - Journal:
       root: ~/vimwiki
       layout: 2c8b,204x55,0,0[204x44,0,0,47,204x10,0,45,52]
       panes:
@@ -14,17 +14,4 @@ windows:
       layout: 2c8b,204x55,0,0[204x44,0,0,47,204x10,0,45,52]
       panes:
         - vim .vimrc
-        - #empty
-  - Website:
-      root: ~/projects/Nosajool.github.io
-      layout: 0ec0,204x55,0,0[204x47,0,0,15,204x7,0,48{102x7,0,48,16,101x7,103,48,18}]
-      panes:
-        - vim README.md
-        - jekyll serve
-        - #empty
-  - Advent:
-      root: ~/projects/advent
-      layout: 2c8b,204x55,0,0[204x44,0,0,47,204x10,0,45,52]
-      panes:
-        - vim README.md
         - #empty
