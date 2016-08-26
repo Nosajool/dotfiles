@@ -84,6 +84,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$HOME/.bin:$PATH"
 eval "$(rbenv init - --no-rehash zsh)"
 export EDITOR='vim'
+export GIT_TERMINAL_PROMPT=1
 export PATH="/Library/TeX/texbin:$PATH"
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
@@ -97,6 +98,9 @@ export JUNIT_HOME="$HOME/junit"
 export PATH="$PATH:$JUNIT_HOME"
 export CLASSPATH="$CLASSPATH:$JUNIT_HOME/junit-4.12.jar:$JUNIT_HOME/hamcrest-core-1.3.jar:$JUNIT_HOME/asm-all-4.0.jar"
 
+# Go
+export PATH="$PATH:$GOPATH/bin"
+
 # Aliases
 alias wiki="cd ~/vimwiki"
 alias ls="ls -FG" # Colour and display /*@=%| for directory, executable, symlink etc..
@@ -106,3 +110,6 @@ alias gdc="git diff --cached"
 alias site-packages="cd /usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages"
 alias junit="java org.junit.runner.JUnitCore"
 alias jasm="java org.objectweb.asm.util.Textifier"
+alias co="checkout"
+
+eval "$(docker-machine env default)"
