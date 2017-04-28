@@ -168,6 +168,7 @@ map <Leader>f :NERDTreeFind<CR>
 " CtrlP
 nnoremap <Leader>b :CtrlPBuffer<CR>
 let g:ctrlp_max_files = 0
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " close current buffer
 nmap <Leader>q :bp <BAR> bd #<CR>
