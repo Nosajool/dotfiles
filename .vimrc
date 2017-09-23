@@ -8,7 +8,6 @@ call vundle#begin()               " initialize vundle
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
-" Plugin 'vim-syntastic/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
@@ -33,7 +32,6 @@ Plugin 'flxf/ucpp.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-" Plugin 'valloric/youcompleteme' " super laggy
 Plugin 'w0rp/ale' " Asynchronous Lint Engine. Requires Vim 8+
 
 call vundle#end()  " end vundle
