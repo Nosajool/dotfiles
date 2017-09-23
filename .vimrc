@@ -8,11 +8,10 @@ call vundle#begin()               " initialize vundle
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/syntastic'
+" Plugin 'vim-syntastic/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'rking/ag.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'terryma/vim-multiple-cursors'
@@ -30,6 +29,12 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-repeat'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'fatih/vim-go'
+Plugin 'flxf/ucpp.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+" Plugin 'valloric/youcompleteme' " super laggy
+Plugin 'w0rp/ale' " Asynchronous Lint Engine. Requires Vim 8+
 
 call vundle#end()  " end vundle
 syntax on          " enable syntax highlighting
@@ -39,6 +44,7 @@ filetype plugin on " enable filetype-specific plugins
 
 let g:solarized_termcolors = 256
 set background=dark
+" set background=light
 colorscheme solarized
 set encoding=utf-8
 
@@ -160,7 +166,7 @@ nnoremap <Leader>tc :vsp ~/.tmux.conf<CR>
 map <C-n> :NERDTreeToggle<CR>
 
 " Ignore certain file extensions in NerdTree
-let NERDTreeIgnore = ['\.class$', '\.o$', '\.d$']
+let NERDTreeIgnore = ['\.pyc$','\.class$', '\.o$', '\.d$']
 
 " View current buffer in NERDTree
 map <Leader>f :NERDTreeFind<CR>
@@ -211,7 +217,8 @@ autocmd FileType gitcommit set textwidth=72 " Commit message width
 " autocmd FileType c set tabstop=4
 " autocmd FileType c set softtabstop=4
 " autocmd FileType c set shiftwidth=4
-" autocmd FileType c map<Leader>hm :%s//\r/g<CR> " Remove windows line endings
+" autocmd FileType c map<Leader>hm :%s//\r/g<CR> " Remove windows line endings*
+autocmd BufRead,BufNewFile *.cc set filetype=cpp.ucpp " Set ucpp filetype NOTE TEMP
 
 " Java
 autocmd FileType java set tabstop=4
@@ -220,14 +227,19 @@ autocmd FileType java set shiftwidth=4
 autocmd FileType java set noexpandtab
 
 " Go
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+" let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+" let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 " let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_interfaces = 1
+" let g:go_highlight_methods = 1
+" let g:go_highlight_structs = 1
+" let g:go_highlight_interfaces = 1
 " let g:go_highlight_operators = 1
 " let g:go_highlight_build_constraints = 1
+
+
+" Javascript
+" React
+let g:jsx_ext_required = 0
 
 " --------------------------- Airline----------------------
 " Always give the last window the status line

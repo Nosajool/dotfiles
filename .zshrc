@@ -49,7 +49,7 @@ ZSH_THEME="gentoo"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages)
+plugins=(git colored-man-pages colorize)
 
 # User configuration
 
@@ -102,6 +102,7 @@ export CLASSPATH="$CLASSPATH:$JUNIT_HOME/junit-4.12.jar:$JUNIT_HOME/hamcrest-cor
 export PATH="$PATH:$GOPATH/bin"
 
 # Aliases
+# alias vim="mvim -v"
 alias wiki="cd ~/vimwiki"
 alias ls="ls -FG" # Colour and display /*@=%| for directory, executable, symlink etc..
 alias gsf="git show --name-only"
@@ -110,6 +111,26 @@ alias gdc="git diff --cached"
 alias site-packages="cd /usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages"
 alias junit="java org.junit.runner.JUnitCore"
 alias jasm="java org.objectweb.asm.util.Textifier"
-alias co="checkout"
+# alias love="/Applications/love.app/Contents/MacOS/love"
+alias snt="cd /Users/jasonloo/projects/share-n-tell"
 
-eval "$(docker-machine env default)"
+# School
+alias anki="cd /Users/jasonloo/Library/Application\ Support/Anki2/version_control"
+
+# eval "$(docker-machine env default)"
+
+export PATH="$PATH:/usr/local/go/bin"
+export GOPATH=$HOME/go-workspace
+export PATH="$GOPATH/bin:$PATH"
+source /usr/local/bin/activate.sh
+
+# Android Studio
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# added by travis gem
+[ -f /Users/jasonloo/.travis/travis.sh ] && source /Users/jasonloo/.travis/travis.sh
