@@ -84,12 +84,17 @@ install_powerline () {
   echo "Open iterm profile and set 14 Pt. Incosolata for Powerline"
 }
 
+install_diff_so_fancy () {
+  brew install diff-so-fancy
+}
+
 install_homebrew
 install_zsh
 install_vundle
 install_tmux
 install_python
 install_powerline
+install_diff_so_fancy
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in $files; do
