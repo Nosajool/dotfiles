@@ -8,7 +8,8 @@
 - run install.sh
 - Fix airline fonts https://github.com/powerline/fonts
   - open iterm profile and change text to a powerline font like Meslo LG M DZ for Powerline
-- Fix tmux mouse-settings
+- `vim .vimrc` and then follow the plugin installation instructions in the `.vimrc`
+- Iterm preferences > General > selection > Applications in terminal may access clipboard
 
 
 # Mac settings
