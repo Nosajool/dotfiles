@@ -6,8 +6,12 @@
 - Install Iterm 2
 - preferences>profile>color presets>import the iterm theme
 - run install.sh
-- check if the user is jasonloo or jason.loo etc...
-- install rbenv, docker-machine
 - Fix airline fonts https://github.com/powerline/fonts
-  - open iterm profile and change text to a powerline font
+  - open iterm profile and change text to a powerline font like Meslo LG M DZ for Powerline
 - Fix tmux mouse-settings
+
+
+# Mac settings
+
+- Keyboard > Key Repeat Fast and Delay until Repeat to Short
+- Modifier Keys: Set Caps Lock to Control

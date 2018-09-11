@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/jasonloo/.oh-my-zsh
+export ZSH=/Users/$USER/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -112,17 +112,19 @@ alias site-packages="cd /usr/local/Cellar/python/2.7.10_2/Frameworks/Python.fram
 alias junit="java org.junit.runner.JUnitCore"
 alias jasm="java org.objectweb.asm.util.Textifier"
 # alias love="/Applications/love.app/Contents/MacOS/love"
-alias snt="cd /Users/jasonloo/projects/share-n-tell"
+alias snt="cd /Users/$USER/projects/share-n-tell"
 
 # School
-alias anki="cd /Users/jasonloo/Library/Application\ Support/Anki2/version_control"
+alias anki="cd /Users/$USER/Library/Application\ Support/Anki2/version_control"
 
 # eval "$(docker-machine env default)"
 
 export PATH="$PATH:/usr/local/go/bin"
 export GOPATH=$HOME/go-workspace
 export PATH="$GOPATH/bin:$PATH"
-source /usr/local/bin/activate.sh
+
+# Docker Machine
+# source /usr/local/bin/activate.sh
 
 # Android Studio
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -133,4 +135,4 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # added by travis gem
-[ -f /Users/jasonloo/.travis/travis.sh ] && source /Users/jasonloo/.travis/travis.sh
+[ -f /Users/$USER/.travis/travis.sh ] && source /Users/$USER/.travis/travis.sh

@@ -88,6 +88,11 @@ install_diff_so_fancy () {
   brew install diff-so-fancy
 }
 
+install_rbenv () {
+  brew install rbenv
+  rbenv init
+}
+
 install_homebrew
 install_zsh
 install_vundle
@@ -95,6 +100,7 @@ install_tmux
 install_python
 install_powerline
 install_diff_so_fancy
+install_rbenv
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in $files; do
