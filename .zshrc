@@ -113,6 +113,7 @@ alias junit="java org.junit.runner.JUnitCore"
 alias jasm="java org.objectweb.asm.util.Textifier"
 # alias love="/Applications/love.app/Contents/MacOS/love"
 alias snt="cd /Users/$USER/projects/share-n-tell"
+alias code="cd ~/vimwiki/software-engineering/code/"
 
 # School
 alias anki="cd /Users/$USER/Library/Application\ Support/Anki2/version_control"
