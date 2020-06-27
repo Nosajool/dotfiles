@@ -5,6 +5,7 @@
 - git clone dotfiles
 - Install Iterm 2
 - preferences>profile>color presets>import the iterm theme
+- preferences>profile>keys>left+right options -> [+Esc](https://stackoverflow.com/a/18925650)
 - run install.sh
 - Fix airline fonts https://github.com/powerline/fonts
   - open iterm profile and change text to a powerline font like Meslo LG M DZ for Powerline
