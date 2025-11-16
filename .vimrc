@@ -7,25 +7,15 @@ call vundle#begin()               " initialize vundle
 " :PluginInstall
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
-Plugin 'rking/ag.vim'
-Plugin 'mattn/emmet-vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
-Plugin 'vimwiki/vimwiki'
-Plugin 'tomtom/tlib_vim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-repeat'
-Plugin 'fatih/vim-go'
-Plugin 'flxf/ucpp.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
@@ -142,10 +132,6 @@ nnoremap <Leader>p :set invpaste<CR>
 " Visually select all
 nnoremap <Leader>a ggVG
 
-" Fugitive
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gl :Git log<CR>
-
 " Expand emmet using ,, in insert mode
 " let g:user_emmet_leader_key=',' Determine a different key. default , is important
 
@@ -175,26 +161,6 @@ nmap <Leader>q :bp <BAR> bd #<CR>
 " vim-multiple-cursors use CTRL-D like sublime text
 let g:multi_cursor_next_key='<C-d>'
 
-" Vimwiki Settings
-autocmd BufRead,BufNewFile *.wiki set filetype=vimwiki " Set vimwiki filetype
-function! ToggleCalendar() " Use Calendar within VimWiki
-  execute ":Calendar"
-  if exists("g:calendar_open")
-    if g:calendar_open == 1
-      execute "q"
-      unlet g:calendar_open
-    else
-      g:calendar_open = 1
-    end
-  else
-    let g:calendar_open = 1
-  end
-endfunction
-autocmd FileType vimwiki map <Leader>c :call ToggleCalendar()<CR> " Toggle vimwiki calendar
-autocmd FileType vimwiki map <Leader>gl :VimwikiGenerateLinks<CR> " Generate vimwiki index links
-autocmd FileType vimwiki map <Leader>wn :VimwikiDiaryNextDay<CR> " Next Day
-autocmd FileType vimwiki map <Leader>wp :VimwikiDiaryPrevDay<CR> " Previous Day
-
 " --------------------------- Language Specific Stuff ----------------------
 
 " Markdown/Latex Specific
@@ -205,30 +171,11 @@ autocmd FileType markdown,tex set textwidth=0 " max text width disabled
 " Git Commit Specific
 autocmd FileType gitcommit set textwidth=72 " Commit message width
 
-" C
-" Might not be worth it to set these because it makes file switching significantly slower
-" autocmd FileType c set tabstop=4
-" autocmd FileType c set softtabstop=4
-" autocmd FileType c set shiftwidth=4
-" autocmd FileType c map<Leader>hm :%s//\r/g<CR> " Remove windows line endings*
-autocmd BufRead,BufNewFile *.cc set filetype=cpp.ucpp " Set ucpp filetype NOTE TEMP
-
 " Java
 autocmd FileType java set tabstop=4
 autocmd FileType java set softtabstop=4
 autocmd FileType java set shiftwidth=4
 autocmd FileType java set noexpandtab
-
-" Go
-" let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-" let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-" let g:go_highlight_functions = 1
-" let g:go_highlight_methods = 1
-" let g:go_highlight_structs = 1
-" let g:go_highlight_interfaces = 1
-" let g:go_highlight_operators = 1
-" let g:go_highlight_build_constraints = 1
-
 
 " Javascript
 " React
