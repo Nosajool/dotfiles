@@ -70,12 +70,6 @@ install_tmux () {
   brew install tmux
 }
 
-install_python () {
-  brew install python
-  echo "Also updating pip..."
-  pip install --upgrade pip
-}
-
 install_powerline () {
   pip install powerline-status
   git clone git@github.com:powerline/fonts.git
@@ -84,27 +78,14 @@ install_powerline () {
   echo "Open iterm profile and set 14 Pt. Incosolata for Powerline"
 }
 
-install_diff_so_fancy () {
-  brew install diff-so-fancy
-}
-
-install_rbenv () {
-  brew install rbenv
-  rbenv init
-}
-
 install_homebrew
 install_zsh
 install_vundle
 install_tmux
-install_python
 install_powerline
-install_diff_so_fancy
-install_rbenv
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in $files; do
-  # http://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html
   if [ ! -f ~/$file ]; then # if file does not exist and files is regular
     echo "No existing $file found"
   else
